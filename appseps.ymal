@@ -1,0 +1,12 @@
+version: 0.0
+Resources:
+  - myEKS:
+      Type: AWS::EKS::Application
+      Properties:
+        TaskDefinition: ""
+        AppSpecContent:
+          Files:
+            - source: ./deployment.yaml
+              destination: /app
+            - source: ./service.yaml
+              destination: /app
